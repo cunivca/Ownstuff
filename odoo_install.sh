@@ -127,7 +127,7 @@ if [ $IS_ENTERPRISE = "True" ]; then
     sudo su $OE_USER -c "mkdir $OE_HOME/enterprise/addons"
 
     GITHUB_RESPONSE=$(sudo git clone --depth 1 --branch $OE_VERSION https://www.github.com/odoo/enterprise "$OE_HOME/enterprise/addons" 2>&1)
-    echo
+    echo "github_response: $GITHUB_RESPONSE"
     while [[ $GITHUB_RESPONSE == *"Authentication"* ]]; do
         echo "------------------------WARNING------------------------------"
         echo "Your authentication with Github has failed! Please try again."
